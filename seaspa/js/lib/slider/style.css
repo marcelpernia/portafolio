@@ -1,0 +1,42 @@
+#slides {
+  display: none;
+  position: relative;
+}
+.slidesjs-pagination .active {
+  color:red;
+}
+
+#slides a img {width: 100%;}
+
+.slidesjs-pagination {
+	text-align: center;
+	/*margin-top: -20px;*/
+	position: absolute;
+	left: 0;
+	width: 100%;
+	bottom: 5px;
+	z-index: 99;
+}
+
+.slidesjs-pagination li {
+	display: inline-block;
+	margin: 0px 5px;
+	opacity: .5;
+	transition:all 200ms linear;
+}
+.slidesjs-pagination li:hover {opacity: .9;}
+
+.slidesjs-pagination li a {
+	display: inline-block;
+	border-radius: 50%;
+	width: 15px;
+	height: 15px;
+	border:solid 2px #3e3e3e;
+	text-indent: -9000px;
+	/*display: none;*/
+	
+}
+
+.slidesjs-pagination .active {
+	background: #3e3e3e;
+}

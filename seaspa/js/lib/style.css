@@ -1,0 +1,8 @@
+#slides {
+  display: none
+}
+.slidesjs-pagination .active {
+  color:red;
+}
+
+a img {width: 100%;}

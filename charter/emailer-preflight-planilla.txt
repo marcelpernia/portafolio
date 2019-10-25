@@ -1,0 +1,34 @@
+:::::::::::Pre flight form::::::::::::
+
+
+FIRST NAME: :first_name:
+LAST NAME: :last_name:
+GENDER: :gender:
+DOB: :dob:
+WEIGHT: :weight:
+
+COUNTRY OF RESIDENCE: :countryresidence:
+CITIZENSHIP: :citizenship:
+PASSPORT: :passport:
+EXP. DATE. PASSPORT: :pp_exp:
+RESIDENCE: :residence:
+EXP. DATE RC: :rc_exp:
+
+EMAIL: :email:
+PHONE NUMBER: :phone:
+
+ADDRESS:
+
+STREET_ADDRESS: :street_address:
+CITY: :city:
+STATE/PROVINCE: :state:
+POSTAL/ZIP CODE: :postal:
+COUNTRY: :country:
+
+
+
+
+
+
+
+
