@@ -15,6 +15,7 @@
 				<ul class="hero__contact">
 					<li>{{ email }}</li>
 					<li>{{ phone }}</li>
+					<li><a target="_blank" :href="github">GitHub</a></li>
 				</ul>
 			</div>
 		</div>
@@ -46,6 +47,7 @@
 		  	heroTitle: 'Portafolio',
 		  	email: 'marcelpm1987@gmail.com',
 		  	phone: '+51 912 374 724',
+		  	github: 'https://github.com/marcelpernia',
 		    works: [
 				{ 
 					url: 'charter',
