@@ -15,7 +15,7 @@
 				<ul class="hero__contact">
 					<li>{{ email }}</li>
 					<li>{{ phone }}</li>
-					<li><a target="_blank" :href="github">GitHub</a></li>
+					<li><a target="_blank" :href="github">GitHub.</a></li>
 				</ul>
 			</div>
 		</div>
