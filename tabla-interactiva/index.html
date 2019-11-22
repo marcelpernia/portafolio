@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
+	<script src="https://unpkg.com/tippy.js@4"></script>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Poppins:400,600,700|Roboto+Condensed:400,700,700i');
+		body {
+			font-family: 'Poppins';
+			max-width: 1200px;
+			margin: auto;
+			padding: 50px 0;
+		}
+		#timetable-container {
+			max-height: 800px;
+			overflow-y: auto;
+		}
+		.timetable {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		.timetable td,
+		.timetable th {
+			border: solid 1px #e3e3e3;
+		}
+		.timetable th {
+			padding: 2px;
+			font-weight: 600;
+			color: #fff;
+			text-transform: uppercase;
+			background-color: #396B92;
+		}
+		.timetable td {
+			padding: 5px;
+		}
+		.timetable .activity-name,
+		.timetable .activity-time,
+		.timetable .activity-room {
+			display: block;
+		}
+		.timetable .activity-name {
+			font-family: 'Roboto Condensed';
+			font-weight: bold;
+			font-size: 15px;
+			color: #3C4953;
+			text-transform: uppercase;
+		}
+		.timetable .activity-time {
+			font-size: 12px;
+			color: #616163;
+		}
+		.timetable .activity-room {
+			font-size: 12px;
+			font-weight: 600;
+			color: #616163;
+		}
+		.timetable [data-activity] {
+			cursor: pointer;
+		}
+		.current {
+			background-color: yellow !important;
+		}
+
+
+		.tippy-popper[x-placement^=bottom] .tippy-arrow {
+			border-bottom-color: #f3f3f3 !important;
+			top: -13px !important;
+		}
+
+		.tippy-popper[x-placement^=top] .tippy-arrow {
+			bottom: -13px !important;
+			border-top: 8px solid #f3f3f3 !important;
+		}
+
+		.timetable .tippy-popper {
+
+		}
+		.timetable .tippy-popper .tippy-tooltip {
+			background-color: #f3f3f3;
+			color: #333;
+			text-align: left;
+			box-shadow: 4px 4px 26px 0 rgba(0,0,0,0.43);
+			padding: 5px 10px !important;
+		}
+		.timetable .tippy-popper .tippy-content {
+
+		}
+
+		.timetable .tippy-popper div {
+			position: relative;
+			font-size: 0;
+		}
+		.timetable .tippy-popper div img {
+			width: 100%;
+			height: 280px;
+			object-fit: cover;
+		}
+		.timetable .tippy-popper h2 {
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+			font-family: "Roboto Condensed";
+			font-size: 26px;
+			font-weight: bold;
+			margin: 0;
+			background-color: rgba(0,0,0,0.6);
+			width: 100%;
+			color: #fff;
+			padding: 10px 15px;
+			box-sizing: border-box;
+			line-height: 26px;
+		}
+		.timetable .tippy-popper p {
+			font-family: Poppins;
+			font-size: 14px;
+			line-height: 20px;
+			padding: 15px;
+			box-sizing: border-box;
+			margin: 0;
+		}
+		.timetable .tippy-popper a {
+			font-size: 14px;
+			font-weight: 600;
+			color: #396B92;
+			text-decoration: none;
+		}
+		.timetable .tippy-popper a:after {
+			content: '>';
+			font-size: 17px;
+			margin-left: 3px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	</style>
+</head>
+<body>
+	<div id="timetable-container">
+	    <div id="TableTimeHorario" class="timetable-container">
+
+	        <div id="DivCabecera">
+	            <table class="responsive-table timetable timetable-morning">
+	                <tr>
+	                    <th>Hora</th>
+	                    <th>Lunes</th>
+	                    <th>Martes</th>
+	                    <th>Miercoles</th>
+	                    <th>Jueves</th>
+	                    <th>Viernes</th>
+	                    <th>Sabado</th>
+	                    <th>Domingo</th>
+	                </tr>
+	                <tr>
+	                    <td rowspan="3">07:30</td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td data-activity="banoturco" data-color="#BAFBFA"
+	                    	data-tippy-content='<div class="tippy-img"><h2>Pilates - Hipopresivos</h2><img src="https://i.blogs.es/f3fb3f/istock-846052150/450_1000.jpg" alt=""></div><div class="tippy-text"><p>Es un método creado para mejorar la movilidad del cuerpo de forma consciente con total control del movimiento. Es apto para cualquier tipo de persona ayudándola a tonificar y alargar su musculatura mejorando su corrección postural y aumentando su flexibilidad. <a href="">Más info</a></p></div>'><span class="activity-name">Baño Turco</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td data-activity="banoturco" data-color="#BAFBFA"><span class="activity-name">Baño Turco</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                </tr>
+	                <tr>
+	                    <td></td>
+	                    <td data-activity="fitness" data-color="#ffe8c6"><span class="activity-name">Fitness</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td data-activity="fitness" data-color="#ffe8c6"><span class="activity-name">Fitness</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td data-activity="fitness" data-color="#ffe8c6"><span class="activity-name">Fitness</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td data-activity="fitness" data-color="#ffe8c6"><span class="activity-name">Fitness</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td data-activity="fitness" data-color="#ffe8c6"><span class="activity-name">Fitness</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                </tr>
+	                <tr>
+	                    <td></td>
+	                    <td></td>
+	                    <td data-activity="banoturco" data-color="#BAFBFA"><span class="activity-name">Baño Turco</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td data-activity="banoturco" data-color="#BAFBFA"><span class="activity-name">Baño Turco</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                </tr>
+	                <tr>
+	                    <td>08:00</td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td data-activity="banoturco" data-color="#BAFBFA"><span class="activity-name">Baño Turco</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td></td>
+	                </tr>
+	                <tr>
+	                    <td>09:00</td>
+	                    <td></td>
+	                    <td data-activity="pilates" data-color="#9ad2b2" data-content="Hola Mundo"><span class="activity-name">Pilates</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td data-activity="pilates" data-color="#9ad2b2"><span class="activity-name">Pilates</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                </tr>
+	                <tr>
+	                    <td rowspan="3">10:00</td>
+	                    <td data-activity="aerobic" data-color="#BFD0FE"><span class="activity-name">Aerobic</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td data-activity="aerobic" data-color="#BFD0FE"><span class="activity-name">Aerobic</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td data-activity="aerobic" data-color="#BFD0FE"><span class="activity-name">Aerobic</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                </tr>
+	                <tr>
+	                    <td data-activity="banoturco" data-color="#BAFBFA"><span class="activity-name">Baño Turco</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                </tr>
+	                <tr>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td data-activity="banoturco" data-color="#BAFBFA"><span class="activity-name">Baño Turco</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                </tr>
+	                <tr>
+	                    <td>10:45</td>
+	                    <td></td>
+	                    <td></td>
+	                    <td data-activity="pilates" data-color="#9ad2b2"><span class="activity-name">Pilates</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td data-activity="pilates" data-color="#9ad2b2"><span class="activity-name">Pilates</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td></td>
+	                </tr>
+	                <tr>
+	                    <td>11:00</td>
+	                    <td data-activity="fitness" data-color="#ffe8c6"><span class="activity-name">Fitness</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                </tr>
+	                <tr>
+	                    <td>16:30</td>
+	                    <td></td>
+	                    <td></td>
+	                    <td data-activity="pilates" data-color="#9ad2b2"><span class="activity-name">Pilates</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td data-activity="pilates" data-color="#9ad2b2"><span class="activity-name">Pilates</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td></td>
+	                </tr>
+	                <tr>
+	                    <td>17:00</td>
+	                    <td></td>
+	                    <td></td>
+	                    <td data-activity="banoturco" data-color="#BAFBFA"><span class="activity-name">Baño Turco</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                </tr>
+	                <tr>
+	                    <td>19:30</td>
+	                    <td></td>
+	                    <td></td>
+	                    <td data-activity="aerobic" data-color="#BFD0FE"><span class="activity-name">Aerobic</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td data-activity="aerobic" data-color="#BFD0FE"><span class="activity-name">Aerobic</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td></td>
+	                </tr>
+	                <tr>
+	                    <td>20:00</td>
+	                    <td></td>
+	                    <td data-activity="aerobic" data-color="#BFD0FE" data-content="Hola Mundo"><span class="activity-name">Aerobic</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td data-activity="aerobic" data-color="#BFD0FE"><span class="activity-name">Aerobic</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td data-activity="aerobic" data-color="#BFD0FE"><span class="activity-name">Aerobic</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                </tr>
+	                <tr>
+	                    <td>20:15</td>
+	                    <td></td>
+	                    <td></td>
+	                    <td data-activity="pilates" data-color="#9ad2b2"><span class="activity-name">Pilates</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td data-activity="pilates" data-color="#9ad2b2"><span class="activity-name">Pilates</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td></td>
+	                </tr>
+	                <tr>
+	                    <td>21:00</td>
+	                    <td></td>
+	                    <td></td>
+	                    <td data-activity="pilates" data-color="#9ad2b2"><span class="activity-name">Pilates</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td data-activity="pilates" data-color="#9ad2b2"><span class="activity-name">Pilates</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td></td>
+	                </tr>
+	                <tr>
+	                    <td>21:45</td>
+	                    <td></td>
+	                    <td data-activity="pilates" data-color="#9ad2b2" data-content="Hola Mundo"><span class="activity-name">Pilates</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td data-activity="pilates" data-color="#9ad2b2"><span class="activity-name">Pilates</span><span class="activity-time">08:00 - 09:00</span><span class="activity-room">Sala 1</span></td>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                </tr>
+	            </table>
+	        </div>
+
+	        <div id="divDetalle">
+	        </div>
+
+	    </div>
+	</div>
+
+	<script>
+		$(document).ready(function(){
+			var activity = $('.timetable td');
+
+			activity.each(function(){
+				var dataColor = $(this).attr('data-color');
+				$(this).css('background-color', dataColor);
+			});
+
+			activity.hover(
+				function(){
+					var current = $(this).attr('data-activity');
+				  	$('[data-activity="'+ current +'"]').addClass('current');
+				},
+				function(){
+				  	activity.removeClass('current');
+				}
+			);
+
+			tippy('.timetable td:not(:empty)', {
+				interactive: true,
+				appendTo: "parent",
+				// trigger: "click",
+				arrow: true,
+				maxWidth: 450,
+				duration: [275, 0]
+			});
+		});
+	</script>
+</body>
+</html>
