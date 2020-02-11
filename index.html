@@ -24,7 +24,7 @@
 			<div class="wrap">
 			  <div v-for="work in works" class="work">
 					<a :href="work.url" target="_blank" class="work__cover">
-						<img :src="work.img + '?234nddsf3'" :alt="work.title">
+						<img :src="'img/' + work.img + '?234nddsf3'" :alt="work.title">
 					</a>
 					<div class="work__info">
 						<div class="work__info__type" v-html="work.type"></div>
@@ -49,135 +49,141 @@
 		  	phone: '+51 912 374 724',
 		  	github: 'https://github.com/marcelpernia',
 		    works: [
+		    { 
+					url: 'https://funindes.marcelpernia.website/',
+					img: 'funindes.jpg',
+					type: 'Diseño, maquetación y desarrollo en Wordpress.',
+					title: 'Funindes'
+				},
 				{ 
 					url: 'charter',
-					img: 'img/charter.jpg',
+					img: 'charter.jpg',
 					type: 'Diseño y Maquetación',
 					title: 'Charter'
 				},
 				{ 
 					url: 'design/tupuntomovil',
-					img: 'img/tupuntomovil.jpg',
+					img: 'tupuntomovil.jpg',
 					type: 'Diseño web',
 					title: 'Tu punto Móvil'
 				},
 				{ 
 					url: 'design/bloomty',
-					img: 'img/bloomty.jpg',
+					img: 'bloomty.jpg',
 					type: 'Diseño web',
 					title: 'Bloomty'
 				},
 				{ 
 					url: 'design/rv-admin',
-					img: 'img/rv-admin.jpg',
-					type: 'Diseño y maquetación',
+					img: 'rv-admin.jpg',
+					type: 'Diseño y maquetación de interfaz aplicación web',
 					title: 'Custom UI'
 				},
 				{ 
 					url: 'design/parl',
-					img: 'img/parl.jpg',
+					img: 'parl.jpg',
 					type: 'Diseño web y maquetación',
 					title: 'Sitio web corporativo'
 				},
 				{ 
 					url: 'design/microsite',
-					img: 'img/microsite.jpg',
+					img: 'microsite.jpg',
 					type: 'Diseño web',
 					title: 'Microsite corporativo'
 				},
 				{ 
 					url: 'design/happyshop-landing',
-					img: 'img/happyshop-landing.jpg',
+					img: 'happyshop-landing.jpg',
 					type: 'Diseño web',
 					title: 'HappyShop Landing'
 				},
 				{ 
 					url: 'happyshop-cupones',
-					img: 'img/happyshop-cupones.jpg',
+					img: 'happyshop-cupones.jpg',
 					type: 'Diseño web y maquetación',
 					title: 'HappyShop Coupons'
 				},
 				{ 
 					url: 'design/lizard',
-					img: 'img/lizard.jpg',
+					img: 'lizard.jpg',
 					type: 'Diseño y maquetación',
 					title: 'Interface Lizard'
 				},
 				{ 
 					url: 'login-1/',
-					img: 'img/login-1.jpg',
+					img: 'login-1.jpg',
 					type: 'Diseño y Maquetación',
 					title: 'Login form #1'
 				},
 				{ 
 					url: 'ma-help',
-					img: 'img/blog-soporte.jpg',
+					img: 'blog-soporte.jpg',
 					type: 'Diseño y Maquetación',
 					title: 'Blog de soporte'
 				},
 				// { 
 				// 	url: 'mesabiertaStaff',
-				// 	img: 'img/interface-intranet.jpg',
+				// 	img: 'interface-intranet.jpg',
 				// 	type: 'Diseño y Maquetación',
 				// 	title: 'Layout para interface'
 				// },
 				{ 
 					url: 'http://www.1000frases.com',
-					img: 'img/1000frases.jpg',
+					img: '1000frases.jpg',
 					type: 'Diseño, maquetación y desarrollo en Wordpress',
 					title: '1000frases.com / Proyecto personal'
 				},
 				{ 
 					url: 'design/redecoro',
-					img: 'img/redecoro.jpg',
+					img: 'redecoro.jpg',
 					type: 'Diseño web',
 					title: 'Redecoro'
 				},
 				{ 
 					url: 'design/modals',
-					img: 'img/modals.jpg',
+					img: 'modals.jpg',
 					type: 'UI Design',
 					title: 'Modals'
 				},
 				// { 
 				// 	url: 'design/agroup',
-				// 	img: 'img/agroup.jpg',
+				// 	img: 'agroup.jpg',
 				// 	type: 'Diseño web',
 				// 	title: 'Agroup'
 				// },
 				{ 
 					url: 'design/hosping',
-					img: 'img/hosping.jpg',
+					img: 'hosping.jpg',
 					type: 'Diseño web',
 					title: 'Calculadora ROI'
 				},
 				{ 
 					url: 'design/testimonio',
-					img: 'img/testimonio.jpg',
+					img: 'testimonio.jpg',
 					type: 'Diseño web',
 					title: 'Tienda online libros'
 				},
 				{ 
 					url: 'happyshop-admin',
-					img: 'img/happyshop-admin.jpg',
+					img: 'happyshop-admin.jpg',
 					type: 'Diseño web y maquetación',
 					title: 'HappyShop Admin'
 				},
 				{ 
 					url: 'design/bayshore',
-					img: 'img/bayshore.jpg',
+					img: 'bayshore.jpg',
 					type: 'Diseño web',
 					title: 'Bayshore'
 				},
 				{ 
 					url: 'starwars-form',
-					img: 'img/login-form-2.jpg',
+					img: 'login-form-2.jpg',
 					type: 'Maquetación. (Design by <a target="_blank" href="https://www.behance.net/emperatrizog">@emperatrizog</a>)',
 					title: 'Star Wars concept form'
 				}
 				// { 
 				// 	url: 'seaspa',
-				// 	img: 'img/seaspa.jpg',
+				// 	img: 'seaspa.jpg',
 				// 	type: 'Diseño y Maquetación. (En desarrollo)',
 				// 	title: 'SeaSpa'
 				// }
